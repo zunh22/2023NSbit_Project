@@ -1,5 +1,0 @@
-#LOCAL RULES
-
-alert tcp any any -> any any (msg: "SYN Flooding Detection"; flags: S; detection_filter: type both, track by_src, count 100, seconds 1; sid: 1000001;)
-
-alert icmp any any -> any any (msg: "PING test"; sid: 1000002;)
