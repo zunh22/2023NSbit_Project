@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC    -fvisibility=hidden   -DNDEBUG -g -ggdb  -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free  -O2 -g -DNDEBUG      -shared  -o daq_hext.so CMakeFiles/daq_hext.dir/daq_hext.c.o 

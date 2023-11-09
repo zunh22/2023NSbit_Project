@@ -1,0 +1,1 @@
+/usr/bin/c++     -fvisibility=hidden   -DNDEBUG -g -ggdb  -fno-builtin-malloc -fno-builtin-calloc -fno-builtin-realloc -fno-builtin-free  -O2 -g -DNDEBUG       CMakeFiles/u2spewfoo.dir/u2spewfoo.cc.o  -o u2spewfoo 

@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/hyeyeon/snort_src/snort3-3.1.18.0/daqs/daq_file.c
+config.h
+/home/hyeyeon/snort_src/snort3-3.1.18.0/daqs/config.h
+daq_user.h
+/home/hyeyeon/snort_src/snort3-3.1.18.0/daqs/daq_user.h
+errno.h
+-
+fcntl.h
+-
+stdbool.h
+-
+stdlib.h
+-
+string.h
+-
+stdio.h
+-
+sys/time.h
+-
+sys/types.h
+-
+unistd.h
+-
+daq_module_api.h
+-
+
+/home/hyeyeon/snort_src/snort3-3.1.18.0/daqs/daq_user.h
+stdint.h
+-
+daq_common.h
+-
+
+config.h
+

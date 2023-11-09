@@ -1,0 +1,10 @@
+#alert icmp any any -> any any (msg:"ICMP PING TEST"; sid:100001;)
+
+alert tcp any any -> any any (msg:"SYN Flooding"; flags: S; detection_filter: track by_src, count 100, seconds 1; sid: 1000002;)
+
+alert arp any any -> any any (msg:"ARP packet detected"; sid:1000001;)
+
+#alert tcp any any -> any any (msg:"First SYN Packet"; flags: S; flow:established; detection_filter: type limit, track by_src, count 1, seconds 60; sid: 100001;)
+
+#alert tcp any any -> any any (msg:"Last SYN Packet"; flags: S; flow:established; detection_filter: type limit, track by_src, count 1, seconds 60; sid: 100002:)
+
