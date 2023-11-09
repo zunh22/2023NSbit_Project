@@ -7,5 +7,5 @@ while true; do
         ./test11.sh "$container_name" &
     done
 
-    sleep 62
+    sleep 12
 done
