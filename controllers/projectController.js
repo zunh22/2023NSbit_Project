@@ -61,8 +61,6 @@ const postRule = async (req, res) => {
 
   const rule = await rules.create(newRule);
 
-  // 데이터베이스 txt 파일로 저장하는 파이썬 실행
-  const pythonProcess = spawn('python', ['/project2/rule_update.py']);
 
 
   res.send(rule);
