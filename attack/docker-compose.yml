@@ -2,7 +2,7 @@ version: '3'
 services:
   container1:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork 
     stdin_open: true
@@ -11,7 +11,7 @@ services:
  
   container2:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -20,7 +20,7 @@ services:
 
   container3:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -38,7 +38,7 @@ services:
 
   container5:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -47,7 +47,7 @@ services:
 
   container6:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -56,7 +56,7 @@ services:
 
   container7:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -65,7 +65,7 @@ services:
 
   container8:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -74,7 +74,7 @@ services:
 
   container9:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -83,7 +83,7 @@ services:
 
   container10:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -92,7 +92,7 @@ services:
 
   container11:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -101,7 +101,7 @@ services:
 
   container12:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -110,7 +110,7 @@ services:
 
   container13:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -119,7 +119,7 @@ services:
 
   container14:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -128,7 +128,7 @@ services:
 
   container15:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -137,7 +137,7 @@ services:
 
   container16:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -146,7 +146,7 @@ services:
 
   container17:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -155,7 +155,7 @@ services:
 
   container18:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -164,7 +164,7 @@ services:
 
   container19:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
@@ -173,20 +173,44 @@ services:
 
   container20:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.27.0.12 -p 8080 --fast"
+    command: -c "hping3 -S 172.20.0.2 -p 8080 --fast"
     #networks:
     # - mynetwork
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
+  mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234pkj
+    ports:
+      - "3333:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
   phpmyadmin:
     image: phpmyadmin:latest
-    restart: unless-stopped
+    environment:
+      - PMA_HOST=mysql
     ports:
       - "8080:80"
-    environment:
-      PMA_ARBITARARY: 1
+    depends_on:
+      - mysql
+
+volumes:
+  mysql-data:
+
+
+#  phpmyadmin:
+#    image: phpmyadmin:latest
+#    environment:
+#      - PMA_HOST=localhost
+#      - APACHE_RUN_USER=www-data
+#      - APACHE_RUN_GROUP=www-data
+#      - APACHE_SERVER_NAME=localhost
+#    ports:
+#      - "8080:80"
 
 #  container17:
 #   image: custom-ubuntu-hping3
