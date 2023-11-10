@@ -10,7 +10,7 @@ const router = require('express').Router();
 
 router.get('/', getAllRules);
 router.get('/:id', getRule);
-router.post('/', postRule);
+router.post('/save', postRule);
 router.put('/:id', putRule);
 
 module.exports = router;

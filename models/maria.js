@@ -8,6 +8,13 @@ const conn = maria.createConnection({
     database: 'project'
 });
  
+const pool = maria.createPool({
+  host: 'localhost',
+  user: 'root',
+  password: '1234pkj',
+  database: 'project',
+  connectionLimit: 5,
+});
 
 conn.connect((err) => {
     if (err) {
@@ -19,8 +26,8 @@ conn.connect((err) => {
 
 
 module.exports = conn;
+module.exports = pool;
 
-conn.end();
 
 /*
 // models/index.js

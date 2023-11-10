@@ -4,7 +4,7 @@ container_name="$1"
 
 date
 
-timeout 10 docker exec "$container_name" tcpdump -i eth0 -nn -e -vvv -tttt >> /home/say/2023NSbit_Project/packet/tcpdump_$container_name.txt
+timeout 10 docker exec "$container_name" tcpdump -w /tcpdump.pcap -i eth0 -nn -e -vvv -tttt >> /home/say/2023NSbit_Project/packet/tcpdump_$container_name.txt
 
 db_user="root"
 db_pw="1234pkj"
