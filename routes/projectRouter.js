@@ -1,16 +1,16 @@
 // routes/projectRouter.js
 const ruleController = require('../controllers/projectController');
 const {
-  getAllRules,
-  getRule,
+  //getAllRules,
+  //getRule,
   postRule,
-  putRule,
+  //putRule,
 } = ruleController;
 const router = require('express').Router();
 
-router.get('/', getAllRules);
-router.get('/:id', getRule);
-router.post('/save', postRule);
-router.put('/:id', putRule);
+//router.get('/', getAllRules);
+//router.get('/:id', getRule);
+router.get('/save', postRule);
+//router.put('/:id', putRule);
 
 module.exports = router;

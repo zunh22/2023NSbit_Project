@@ -3,15 +3,15 @@ const db = require('../models/maria');
 const { pool } = db;
 
 
-
+/*
 // SELECT (조회하기)
 const getAllRules = async (req, res) => {
-  const ruleLists = await rules.findAll();/*{
+  const ruleLists = await rules.findAll();{
       attributes: {
       exclude: ['email', 'password']
     }
   });
-  */
+  
   res.send(ruleLists);
 };
 
@@ -40,7 +40,7 @@ const getRule = async (req, res) => {
   }
 };
 
-
+*/
 /*const getRule = async (req, res) => {
   const { id } = req.params;
 
@@ -59,6 +59,7 @@ const getRule = async (req, res) => {
 
 // INSERT (추가하기)
 const postRule = async (req, res) => {
+  res.send('Hello from /post!');
   const {protocol, src_ip, src_port, dst_ip, dst_port, option, flag} = req.body;
 
   try {
@@ -70,10 +71,13 @@ const postRule = async (req, res) => {
     console.error('데이터 저장 오류:', error);
     res.status(500).send('데이터 저장 중 오류가 발생했습니다.');
   } finally {
+    //res.status(200).send('데이터가 성공적으로 저장되었습니다.');
+    res.send('Hello from /post!');
     connection.release(); // 연결 반환
   }
 };
 
+/*
 // UPDATE (갱신하기)
 const putRule = async (req, res) => {
   const { id } = req.params;
@@ -82,19 +86,19 @@ const putRule = async (req, res) => {
   const result = await rules.update(newInfo, { where: { id } });
   if (result[0]) {
     const rule = await rules.findOne({
-/*      attributes: {
+      attributes: {
         exclude: ['email', 'password']
-      },*/
+      },
       where: { id }
     });
     res.send(rule);
   } else res.status(404).send({ message: '존재하지 않는 ID 입니다' });
 };
-
+*/
 
 module.exports = {
-  getAllRules,
-  getRule,
+ // getAllRules,
+ // getRule,
   postRule,
-  putRule,
+ // putRule,
 };
