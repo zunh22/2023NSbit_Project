@@ -15,6 +15,7 @@ xhr.onreadystatechange = function () {
 
         for (var i = 0; i < dataArray.length; i++) {
             var row = tbody.insertRow(-1);
+            row.setAttribute('data-index', i+1); 
             
             for (var j = 0; j < dataArray[i].length; j++) {
                 var cell = row.insertCell(j);
