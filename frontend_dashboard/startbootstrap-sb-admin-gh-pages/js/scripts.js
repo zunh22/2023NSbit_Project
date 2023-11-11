@@ -50,7 +50,12 @@ function addArr(){
 
 function updateTable(){
     const outputTable = document.getElementById("datatablesSimple");
+    console.log(outputTable);
 
+    if(outputTable){
+        var tbody = outputTable.getElementsByTagName('tbody')[0];
+    }
+    console.log(tbody);
     //outputTable.innerHTML = ""; // 표 초기화
 
     const row = document.createElement("tr");
@@ -60,46 +65,9 @@ function updateTable(){
         cell.textContent = Arr[Arr.length-1][j];
         row.appendChild(cell);
     }
-    outputTable.appendChild(row);
+    tbody.appendChild(row);
 
-    /*for (let i = 0; i < Arr.length; i++) {
-        const row = document.createElement("tr");
-
-        
-        for (let j = 0; j < Arr[i].length; j++) {
-          const cell = document.createElement("td");
-          cell.textContent = Arr[i][j];
-          row.appendChild(cell);
-        }
-        outputTable.appendChild(row);
-      }*/
 }
 
 
-// // 표 머릿말과 바닥글 데이터
 // const tableHeadData = ["Action", "Protocol", "Source IP", "Destination IP", "MSG", "SID"];
-// const tableFootData = ["Action", "Protocol", "Source IP", "Destination IP", "MSG", "SID"];
-
-// // 표 머릿말 생성 함수
-// function createTableHead() {
-//   const tableHead = document.querySelector("thead tr");
-
-//   for (let i = 0; i < tableHeadData.length; i++) {
-//     const th = document.createElement("th");
-//     th.textContent = tableHeadData[i];
-//     tableHead.appendChild(th);
-//   }
-// }
-
-// // 표 바닥글 생성 함수
-// function createTableFoot() {
-//   const tableFoot = document.querySelector("tfoot tr");
-
-//   for (let i = 0; i < tableFootData.length; i++) {
-//     const th = document.createElement("th");
-//     th.textContent = tableFootData[i];
-//     tableFoot.appendChild(th);
-//   }
-// }
-
-// // 초기 테이블 머릿말과 바닥글 생성
