@@ -6,44 +6,24 @@ var filePath = 'packet.txt';
 var currentPage = 1;
 var countRow = 20;
 
-function loadData() {
-    xhr.open('GET', filePath, true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            var dataArray = JSON.parse(xhr.responseText);
-    
-            var tbody = document.querySelector("#datatablesSimple tbody");
-    
-            var startIdx = (currentPage - 1) * countRow;
-            var endIdx = startIdx + countRow;
-    
-            tbody.innerHTML = "";
-    
-            for (var i = startIdx; i < endIdx&&i<dataArray.length; i++) {
-                var row = tbody.insertRow(-1);
-                
-                for (var j = 0; j < dataArray[i].length; j++) {
-                    var cell = row.insertCell(j);
-                    cell.textContent = dataArray[i][j];
-                }
+xhr.open('GET', filePath, true);
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        var dataArray = JSON.parse(xhr.responseText);
+
+        var tbody = document.querySelector("#datatablesSimple tbody");
+
+        for (var i = 0; i < dataArray.length; i++) {
+            var row = tbody.insertRow(-1);
+            row.setAttribute('data-index', i+1); 
+            
+            for (var j = 0; j < dataArray[i].length; j++) {
+                var cell = row.insertCell(j);
+                cell.textContent = dataArray[i][j];
             }
-    
         }
-    };
-    
-    // 요청 전송
-    xhr.send();
-}
-
-function nextPage(){
-    currentPage++;
-    loadData();
-}
-function previousPage(){
-    if(currentPage>1){
-        currentPage--;
-        loadData();
     }
-}
+};
 
-loadData();
+// 요청 전송
+xhr.send();
