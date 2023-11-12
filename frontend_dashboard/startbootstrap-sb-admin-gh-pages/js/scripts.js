@@ -77,7 +77,8 @@ function save_ruleset(){
       const title = form.title.value;
       const content = form.content.value;
       // 서버로 데이터 전송
-      const response = await fetch('/save-data', {
+      //fetch 함수 내에 해당 db 저장 코드 담긴 경로 적어주기
+      const response = await fetch('localhost:3500/hi/save', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, content })
