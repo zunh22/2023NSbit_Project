@@ -41,7 +41,7 @@ xhr.onreadystatechange = function () {
                 resultArray.push(infoArray);
             }
         }
-
+        
         var tbody = document.querySelector("#datatablesSimple tbody");
         for (var i = 0; i < resultArray.length; i++) {
             var row = tbody.insertRow(-1);
