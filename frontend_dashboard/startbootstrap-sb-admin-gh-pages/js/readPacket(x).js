@@ -33,7 +33,7 @@ xhr.onreadystatechange = function () {
                 const protocolTypeMatch2 = line1.match(/proto (\w+) \(\d+\)/);
                 const protocolType2 = protocolTypeMatch2 ? protocolTypeMatch2[1] : null;
         
-                const lengthMatch2 = line2.match(/length (\d+)/);
+                const lengthMatch2 = line1.match(/length (\d+)/);
                 const length2 = lengthMatch2 ? lengthMatch2[1] : null;
         
                 // 추출된 정보를 배열에 저장
