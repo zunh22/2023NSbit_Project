@@ -64,9 +64,10 @@ async function fetchRuleSets() {
       const ruleSets = await response.json();
 
       // 처리된 룰셋 정보를 웹 페이지에 출력하는 로직을 작성
-      const ruleSetListElement = document.getElementById('ruleSetList');
+      const ruleSetListElement = document.getElementById('form');
       ruleSets.forEach(ruleSet => { 
           const ruleSetItem = document.createElement('div');
+          console.log(ruleSetItem);
           ruleSetItem.textContent = JSON.stringify(ruleSet);
           ruleSetListElement.appendChild(ruleSetItem);
       });
