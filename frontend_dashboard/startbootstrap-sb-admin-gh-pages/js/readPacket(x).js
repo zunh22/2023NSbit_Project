@@ -18,7 +18,11 @@ xhr.onreadystatechange = function () {
                 // line1에서 정보 추출
                 const timestampMatch1 = line1.match(/(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d+)/);
                 const timestamp1 = timestampMatch1 ? timestampMatch1[1] : null;
-        
+
+                const sourceMacMatch1 = line1.match(/(\w+:\w+:\w+:\w+:\w+:\w+) > (\w+:\w+:\w+:\w+:\w+:\w+)/);
+                const sourceMac1 = sourceMacMatch1 ? sourceMacMatch1[1] : null;
+                const sourceMac2 = sourceMacMatch1 ? sourceMacMatch1[2] : null;
+         
                 // line2에서 정보 추출
                 const sourceIpMatch2 = line2.match(/(\d+\.\d+\.\d+\.\d+)\.(\d+) > (\d+\.\d+\.\d+\.\d+)\.(\d+)/);
                 const sourceIp2 = sourceIpMatch2 ? sourceIpMatch2[1] : null;
@@ -26,14 +30,14 @@ xhr.onreadystatechange = function () {
                 const destinationIp2 = sourceIpMatch2 ? sourceIpMatch2[3] : null;
                 const destinationPort2 = sourceIpMatch2 ? sourceIpMatch2[4] : null;
         
-                const protocolTypeMatch2 = line2.match(/proto (\w+) \(\d+\)/);
+                const protocolTypeMatch2 = line1.match(/proto (\w+) \(\d+\)/);
                 const protocolType2 = protocolTypeMatch2 ? protocolTypeMatch2[1] : null;
         
                 const lengthMatch2 = line2.match(/length (\d+)/);
                 const length2 = lengthMatch2 ? lengthMatch2[1] : null;
         
                 // 추출된 정보를 배열에 저장
-                const infoArray = [timestamp1, sourceIp2, sourcePort2, destinationIp2, destinationPort2,  protocolType2, `${length2}`];
+                const infoArray = [timestamp1, sourceIp2, sourcePort2, sourceMac1, destinationIp2, destinationPort2, sourceMac2,  protocolType2, `${length2}`];
                 resultArray.push(infoArray);
             }
         }
