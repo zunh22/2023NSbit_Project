@@ -65,7 +65,7 @@ async function fetchRuleSets() {
 
       // 처리된 룰셋 정보를 웹 페이지에 출력하는 로직을 작성
       const ruleSetListElement = document.getElementById('ruleSetList');
-      ruleSets.forEach(ruleSet => {
+      ruleSets.forEach(ruleSet => { 
           const ruleSetItem = document.createElement('div');
           ruleSetItem.textContent = JSON.stringify(ruleSet);
           ruleSetListElement.appendChild(ruleSetItem);
