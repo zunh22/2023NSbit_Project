@@ -16,6 +16,13 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
+
+// submit 클릭시 실행
+document.getElementById('ruleSetForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // 기본 제출 동작 막기
+    saveRuleSet(); // saveRuleSet 함수 호출
+});
+
 // 룰셋 저장
 async function saveRuleSet() {
   const protocol= document.getElementById('protocol').value;
