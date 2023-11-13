@@ -69,26 +69,38 @@ function updateTable(){
 
 }
 
-function save_ruleset(){
+function save_ruleset() {
     const form = document.getElementById('dataForm');
+  
+    // 폼 데이터를 가져와서 서버로 전송하는 함수
+    async function sendDataToServer(title, content) {
+      try {
+        const response = await fetch('localhost:3500/hi', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ title, content })
+        });
+  
+        if (response.ok) {
+          alert('데이터가 성공적으로 저장되었습니다.');
+        } else {
+          alert('데이터 저장 중 오류가 발생했습니다.');
+        }
+      } catch (error) {
+        console.error('서버 통신 중 오류 발생:', error);
+        alert('서버 통신 중 오류가 발생했습니다.');
+      }
+    }
+  
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      
+  
+      // 폼에서 데이터 가져오기
       const title = form.title.value;
       const content = form.content.value;
+  
       // 서버로 데이터 전송
-      //fetch 함수 내에 해당 db 저장 코드 담긴 경로 적어주기
-      const response = await fetch('localhost:3500/hi/save', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, content })
-      });
-
-      if (response.ok) {
-        alert('데이터가 성공적으로 저장되었습니다.');
-      } else {
-        alert('데이터 저장 중 오류가 발생했습니다.');
-      }
+      await sendDataToServer(title, content);
     });
-
-}
+  }
+  

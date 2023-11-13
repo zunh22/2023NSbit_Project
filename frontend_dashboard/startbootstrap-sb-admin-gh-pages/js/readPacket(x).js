@@ -40,7 +40,6 @@ var xhr = new XMLHttpRequest();
               resultArray.push(infoArray);
               num++;
           }
-        }
 
         var tbody = document.querySelector("#datatablesSimple tbody");
         for (var i = 0; i < resultArray.length; i++) {
@@ -53,7 +52,8 @@ var xhr = new XMLHttpRequest();
           }
         }
     }
-  };
+  }
+};
   
     // 요청 전송
     xhr.send();
