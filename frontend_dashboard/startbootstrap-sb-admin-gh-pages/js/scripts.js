@@ -66,18 +66,23 @@ async function saveRuleSet() {
 
 // 룰셋 출력
 async function fetchRuleSets() {
-  try {
+    try {
       const response = await fetch('http://localhost:3500/get');
       const ruleSets = await response.json();
-
-      // 처리된 룰셋 정보를 웹 페이지에 출력하는 로직을 작성
+  
       const ruleSetListElement = document.getElementById('form');
       ruleSets.forEach(ruleSet => { 
-          const ruleSetItem = document.createElement('div');
-          ruleSetItem.textContent = JSON.stringify(ruleSet);
-          ruleSetListElement.appendChild(ruleSetItem);
+        const ruleSetItem = document.createElement('div');
+        // HTML 형식으로 룰셋을 출력
+        ruleSetItem.innerHTML = `<p>${JSON.stringify(ruleSet)}</p>`;
+        ruleSetListElement.appendChild(ruleSetItem);
       });
-  } catch (error) {
+    } catch (error) {
       console.error('Error fetching rule sets:', error);
+      // 사용자에게 에러 메시지 표시
+      const errorElement = document.createElement('div');
+      errorElement.textContent = '룰셋을 불러오는 중에 오류가 발생했습니다.';
+      document.body.appendChild(errorElement);
+    }
   }
-}
+  
