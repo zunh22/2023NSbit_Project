@@ -25,7 +25,6 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-
 const form = document.getElementById("form");
 const Arr = new Array();
 
