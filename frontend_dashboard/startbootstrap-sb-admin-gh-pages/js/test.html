@@ -1,4 +1,32 @@
-var xhr = new XMLHttpRequest();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packet Information</title>
+</head>
+<body>
+  <table id="datatablesSimple">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Source IP</th>
+        <th>Source Port</th>
+        <th>Destination IP</th>
+        <th>Destination Port</th>
+        <th>Flags</th>
+        <th>Protocol Type</th>
+        <th>Length</th>
+      </tr>
+    </thead>
+    <tbody id="resultBody">
+      <!-- 결과가 여기에 들어갈 것입니다. -->
+    </tbody>
+  </table>
+  <div id="arpInfo"></div>
+  <script>
+    // 파일 읽기 - XMLHttpRequest 객체 생성
+    var xhr = new XMLHttpRequest();
     var filePath = '../tcpdump_test3.txt';
     xhr.open('GET', filePath, true);
 
@@ -8,7 +36,6 @@ var xhr = new XMLHttpRequest();
         const lines = fileContent.split('\n');
         const resultArray = [];
         const num = 1;
-
       for (let i = 0; i < lines.length; i += 2) {
           if (i + 1 < lines.length) {
               const line1 = lines[i].trim();
@@ -36,9 +63,8 @@ var xhr = new XMLHttpRequest();
               const length = lengthMatch ? lengthMatch[1] : null;
 
               // 추출된 정보를 배열에 저장
-              const infoArray = [num, timestamp, sourceIp, sourcePort, destinationIp, destinationPort,0, 0, protocolType, `length ${length}`];
+              const infoArray = [timestamp, sourceIp, sourcePort, destinationIp, destinationPort, flags, protocolType, `length ${length}`];
               resultArray.push(infoArray);
-              num++;
           }
         }
 
@@ -54,20 +80,10 @@ var xhr = new XMLHttpRequest();
         }
     }
   };
+    
   
     // 요청 전송
     xhr.send();
-
-
-    /*var tbody = document.querySelector("#datatablesSimple tbody");
-
-        for (var i = 0; i < resultArray.length; i++) {
-            var row = tbody.insertRow(-1);
-            row.setAttribute('data-index', i+1); 
-            
-            for (var j = 0; j < resultArray[i].length; j++) {
-                var cell = row.insertCell(j);
-                cell.textContent = resultArray[i][j];
-            }
-        }
-*/
+  </script>
+</body>
+</html>
