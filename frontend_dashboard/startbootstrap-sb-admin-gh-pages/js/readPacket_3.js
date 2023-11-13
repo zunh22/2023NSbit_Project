@@ -3,7 +3,9 @@ var filePath = 'tcpdump_test3.txt';
 var currentPage = 1;
 var rowsPerPage = 10;
 
-function loadData(){
+var dataToExport = 0;
+
+function loadData(callback){
     xhr.open('GET', filePath, true);
 
     xhr.onreadystatechange = function () {
@@ -58,6 +60,11 @@ function loadData(){
                     cell.textContent = resultArray[i][j];
                 }
             }
+            dataToExport = resultArray.length;
+
+            if(callback){
+                callback(dataToExport);
+            }
         }
     };
     
@@ -77,3 +84,6 @@ function previousPage() {
 }
 
 loadData();
+
+export {loadData, dataToExport};
+//export default dataToExport;
