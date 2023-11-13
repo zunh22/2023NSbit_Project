@@ -18,7 +18,8 @@ xhr.onreadystatechange = function () {
         const num = 1;
         while((match = regex.exec(fileContent)) !== null) {
           const [, timestamp, sourceIP, sourcePort, destinationIP, destinationPort, sourceMac, destinationMac, protocol, length] = match;
-          const lineArray = [num, timestamp, sourceIP, sourcePort, sourceMac, destinationIP, destinationPort, destinationMac, protocol, 'length ${length}'];
+          const lineArray = [num, timestamp, sourceIP, sourcePort, sourceMac, destinationIP, destinationPort, destinationMac, protocol, `length ${length}`];
+
           resultArray.push(lineArray);
           num++;
           document.write(resultArray);
