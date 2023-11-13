@@ -24,6 +24,7 @@ window.addEventListener('DOMContentLoaded', event => {
 //     addArr();
 // });
 
+<<<<<<< HEAD
 // function addArr(){
 //     alert("Rulset 입력 완료");
 //     // var action = document.getElementById("Action").value;
@@ -34,6 +35,18 @@ window.addEventListener('DOMContentLoaded', event => {
 //     // var sid = document.getElementById("sid").value;
 //     // Arr.push([action, Protocol, Source, Destination, msg, sid]);
 //     save_ruleset();
+=======
+function addArr(){
+    alert("Rulset 입력 완료");
+    var protocol = document.getElementById("protocol").value;
+    var src_ip = document.getElementById("src_ip").value;
+    var src_port = document.getElementById("src_port").value;
+    var dst_ip = document.getElementById("dst_ip").value;
+    var dst_port = document.getElementById("dst_port").value;
+    var option = document.getElementById("option").value;
+    var flag = document.getElementById("flag").value;
+    Arr.push([protocol, src_ip, src_port, dst_ip, dst_port, option, flag]);
+>>>>>>> 75c0280f4f011f86659616408500a9d96f256901
 
 
 //     // updateTable();
