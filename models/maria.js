@@ -16,6 +16,25 @@ const pool = maria.createPool({
   connectionLimit: 5,
 });
 
+const Rule = {
+  create: (data, callback) => {
+      const query = 'INSERT INTO rule (protocol, src_ip, src_port, dst_ip, dst_port, option, flag) VALUES (?, ?, ?, ?, ?, ?, ?)';
+      conn.query(query, [data.protocol, data.src_ip, data.src_port, data.dst_ip, data.dst_port, data.option, data.flag], callback);
+  },
+  findAll: (callback) => {
+        const query = 'SELECT * FROM rule';
+        conn.query(query, (error, results) => {
+            if (error) {
+                console.error('룰 조회 오류:', error);
+                
+                return;
+            }
+            console.log('조회된 룰:', results);
+           
+        });
+    }
+};
+
 conn.connect((err) => {
     if (err) {
         console.error('MariaDB connection failed: ' + err.stack);
@@ -25,8 +44,9 @@ conn.connect((err) => {
 });
 
 
-module.exports = conn;
-module.exports = pool;
+
+module.exports = { conn, pool, Rule };
+
 
 
 /*
