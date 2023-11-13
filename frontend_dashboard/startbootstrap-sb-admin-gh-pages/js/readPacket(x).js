@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest();
-var filePath = '../tcpdump_test3.txt';
+var filePath = 'tcpdump_test3.txt';
 var currentPage = 1;
 var countRow = 20;
 xhr.open('GET', filePath, true);
@@ -37,7 +37,7 @@ xhr.onreadystatechange = function () {
                 const length = lengthMatch ? lengthMatch[1] : null;
 
                 // 추출된 정보를 배열에 저장
-                const infoArray = [timestamp, sourceIp, sourcePort,sourcePort, destinationIp, destinationPort, destinationPort, protocolType, `length ${length}`];
+                const infoArray = [timestamp, sourceIp, sourcePort, destinationIp, destinationPort, destinationPort, protocolType, `length ${length}`];
                 resultArray.push(infoArray);
             }
         }
