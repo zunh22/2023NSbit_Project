@@ -1,12 +1,3 @@
-/*!
-    * Start Bootstrap - SB Admin v7.0.7 (https://startbootstrap.com/template/sb-admin)
-    * Copyright 2013-2023 Start Bootstrap
-    * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin/blob/master/LICENSE)
-    */
-    // 
-// Scripts
-// 
-
 window.addEventListener('DOMContentLoaded', event => {
 
     // Toggle the side navigation
@@ -43,20 +34,14 @@ function addArr(){
     var sid = document.getElementById("sid").value;
     Arr.push([action, Protocol, Source, Destination, msg, sid]);
 
-    console.log(Arr);   
     updateTable();
 }
 
 function updateTable(){
     const outputTable = document.getElementById("datatablesSimple");
-    console.log(outputTable);
-
     if(outputTable){
         var tbody = outputTable.getElementsByTagName('tbody')[0];
     }
-    console.log(tbody);
-    //outputTable.innerHTML = ""; // 표 초기화
-
     const row = document.createElement("tr");
 
     for (let j = 0; j < Arr[Arr.length-1].length; j++) {
@@ -65,11 +50,12 @@ function updateTable(){
         row.appendChild(cell);
     }
     tbody.appendChild(row);
+    save_ruleset();
 
 }
 
 function save_ruleset() {
-    const form = document.getElementById('dataForm');
+    const form  = document.getElementById('form');
   
     // 폼 데이터를 가져와서 서버로 전송하는 함수
     async function sendDataToServer(title, content) {
@@ -81,8 +67,10 @@ function save_ruleset() {
         });
   
         if (response.ok) {
+          console.log("check");
           alert('데이터가 성공적으로 저장되었습니다.');
         } else {
+          console.log("non-check");
           alert('데이터 저장 중 오류가 발생했습니다.');
         }
       } catch (error) {
@@ -91,15 +79,4 @@ function save_ruleset() {
       }
     }
   
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-  
-      // 폼에서 데이터 가져오기
-      const title = form.title.value;
-      const content = form.content.value;
-  
-      // 서버로 데이터 전송
-      await sendDataToServer(title, content);
-    });
-  }//테스트
-  
+  }
