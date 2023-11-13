@@ -42,7 +42,7 @@ async function saveRuleSet() {
       option,
       flag
   };
-
+//try
   try {
       const response = await fetch('http://localhost:3500/save', {
           method: 'POST',
