@@ -15,12 +15,6 @@ const pool = maria.createPool({
   database: 'project',
   connectionLimit: 5,
 });
-//풀이 생성되는지 확인
-if (pool){
-  console.log('정상 생성');
-}else{
-  console.error('실패');
-}
 
 const Rule = {
   create: (data, callback) => {
@@ -54,24 +48,6 @@ conn.connect((err) => {
         return;
     }
     console.log('Connected to MariaDB');
-});
-
-const newRule = {
-  protocol: 'TCP',
-  src_ip:'1',
-  src_port:'1',
-  dst_ip:'1',
-  dst_port:'1',
-  option:'1',
-  flag:'1',
-};
-Rule.create(newRule,(error, results)=>{
-  if (error){
-    console.error('룰 생성 중 오류:',error);
-  }else{
-    console.log('룰이 성공적으로 저장되었습니다.');
-  }
-
 });
 
 
