@@ -15,6 +15,12 @@ const pool = maria.createPool({
   database: 'project',
   connectionLimit: 5,
 });
+//풀이 생성되는지 확인
+if (pool){
+  console.log('정상 생성');
+}else{
+  console.error('실패');
+}
 
 const Rule = {
   create: (data, callback) => {
