@@ -1,11 +1,11 @@
 #!/bin/bash
 container_name="$1"
-WS_SERVER="localhost:8080"
+export PATH=$PATH:/home/say/.cargo/bin/websocat
 
 date
 
 
-timeout 60 docker exec "$container_name" tcpdump -i eth0 -nn -e -vvv -tttt >> /home/say/2023NSbit_Project/packet/tcpdump_$container_name.txt
+timeout 60 docker exec "$container_name" tcpdump -i eth0 -nn -e -vvv -tttt >> /home/say/2023NSbit_Project/frontend_dashboard/startbootstrap-sb-admin-gh-pages/tcpdump_$container_name.txt
 
 db_user="root"
 db_pw="1234pkj"
@@ -148,7 +148,7 @@ while IFS= read -r line; do
                     if [ "$syn_count" -ge "$r_count_int" ]; then
                         echo "alert!! SYN count is $syn_count"
                         MESSAGE="SYN Flooding:$line \ $line2"
-                        echo "$MESSAGE" | websocat "$WS_SERVER" 
+                        echo "$MESSAGE" | websocat ws://localhost:8080
                     fi
 
                 fi
@@ -169,6 +169,6 @@ while IFS= read -r line; do
         fi
 	
 	fi
-done < /home/say/2023NSbit_Project/packet/tcpdump_$container_name.txt
+done < /home/say/2023NSbit_Project/frontend_dashboard/startbootstrap-sb-admin-gh-pages/tcpdump_$container_name.txt
 
 
