@@ -18,8 +18,15 @@ const pool = maria.createPool({
 
 const Rule = {
   create: (data, callback) => {
-      const query = 'INSERT INTO rule (protocol, src_ip, src_port, dst_ip, dst_port, option, flag) VALUES (?, ?, ?, ?, ?, ?, ?)';
-      conn.query(query, [data.protocol, data.src_ip, data.src_port, data.dst_ip, data.dst_port, data.option, data.flag], callback);
+    const query = 'INSERT INTO rule (protocol, src_ip, src_port, dst_ip, dst_port, option, flag) VALUES (?, ?, ?, ?, ?, ?, ?)';
+    conn.query(query, [data.protocol, data.src_ip, data.src_port, data.dst_ip, data.dst_port, data.option, data.flag], (error, results) => {
+      if (error) {
+        console.error('룰 생성 오류:', error);
+        if (callback) callback(error);
+        return;
+      }
+      if (callback) callback(null, results);
+    });
   },
   findAll: (callback) => {
         const query = 'SELECT * FROM rule';
@@ -43,6 +50,23 @@ conn.connect((err) => {
     console.log('Connected to MariaDB');
 });
 
+const newRule = {
+  protocol: 'TCP',
+  src_ip:'1',
+  src_port:'1',
+  dst_ip:'1',
+  dst_port:'1',
+  option:'1',
+  flag:'1',
+};
+Rule.create(newRule,(error, results)=>{
+  if (error){
+    console.error('룰 생성 중 오류:',error);
+  }else{
+    console.log('룰이 성공적으로 저장되었습니다.');
+  }
+
+});
 
 
 module.exports = { conn, pool, Rule };
