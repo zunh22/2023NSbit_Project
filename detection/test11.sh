@@ -25,7 +25,7 @@ syn_count=0
 ack_count=0
 fin_count=0
 rst_count=0
-reset_interval=2
+reset_interval=5
 last_reset_time=$SECONDS
 
 function reset_packet_count() {
@@ -56,7 +56,6 @@ while IFS= read -r line; do
                 while IFS= read -r rule; do
                     ip=$(echo "$line" | grep -oE 'Reply ([0-9]{1,3}\.){3}[0-9]{1,3}' | awk '{print $2}')
                     mac=$(echo "$line" | grep -oE 'is-at ([0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}' | awk '{print $2}')
-                    echo "IP: $ip, mac: $mac"
                     #arp는 응답 패킷에서만 발생 응답 패킷에서 ip mac 비교하면 됨
                     #출발지 ip에 특정 ip 넣으면 거기서 출발하는 패킷만 보는 rule 설정만 될듯 -> 아직 안함
                     #reply 패킷에 도착지 ip가 나오지 않음 mac만 나옴
@@ -76,7 +75,6 @@ while IFS= read -r line; do
             sport=$(echo "$line2" | awk -F'[ .:]' '{print $9'})
             dport=$(echo "$line2" | awk -F'[ .:]' '{print $15}')
             flags=$(echo "$line2" | awk -F'\\[|\\]' '{print $2}' | cut -c1)
-            echo "dst : $dport"
 
             while IFS= read -r rule; do
                 syn_detected=true
@@ -94,8 +92,7 @@ while IFS= read -r line; do
                 r_flag=$(echo "$rule" | awk -F' ' '{print $7}')
                 r_second_int=$((r_second))
                 r_count_int=$((r_count))
-                echo "r_option : $r_option"
-                echo "r_second : $r_second r_count : $r_count"
+
 
                 
                 if [ "$r_protocol" != "TCP" ]; then
@@ -103,7 +100,6 @@ while IFS= read -r line; do
                     ack_detected=false
                     fin_detected=false
                     rst_detected=false
-                    echo "$r_protocol 1"
                 fi
 
                 if [ "$r_src_ip" != "any" ]; then
@@ -112,7 +108,6 @@ while IFS= read -r line; do
                         ack_detected=false
                         fin_detected=false
                         rst_detected=false
-                        echo "$r_src_ip 2"
                     fi
                 fi
 
@@ -122,7 +117,6 @@ while IFS= read -r line; do
                         ack_detected=false
                         fin_detected=false
                         rst_detected=false
-                        echo "$r_src_port 3"
                     fi
                 fi
 
@@ -132,8 +126,7 @@ while IFS= read -r line; do
                         ack_detected=false
                         fin_detected=false
                         rst_detected=false
-                        echo "$r_dst_ip 4"
-                    fi
+                     fi
                 fi
 
                 if [ "$r_dst_port" != "any" ]; then
@@ -142,7 +135,6 @@ while IFS= read -r line; do
                         ack_detected=false
                         fin_detected=false
                         rst_detected=false
-                            echo "$r_dst_port 5"
                     fi
                 fi
 
@@ -151,7 +143,6 @@ while IFS= read -r line; do
                     ack_detected=false
                     fin_detected=false
                     rst_detected=false
-                    echo "$flags $r_flag 6"
                 fi
 
                 if [ "$flags" = "S" ]; then
@@ -182,6 +173,7 @@ while IFS= read -r line; do
                     ((syn_count+=1))
                     if [ "$syn_count" -le 1 ]; then
                         last_reset_time=$SECONDS
+                        echo "set"
                     fi
                     echo "time : $last_reset_time"
                     echo "$syn_count 333333"
