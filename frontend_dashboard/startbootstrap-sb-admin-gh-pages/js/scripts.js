@@ -69,5 +69,26 @@ function updateTable(){
 
 }
 
+function save_ruleset(){
+    const form = document.getElementById('dataForm');
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      
+      const title = form.title.value;
+      const content = form.content.value;
+      // 서버로 데이터 전송
+      //fetch 함수 내에 해당 db 저장 코드 담긴 경로 적어주기
+      const response = await fetch('localhost:3500/hi/save', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ title, content })
+      });
 
-// const tableHeadData = ["Action", "Protocol", "Source IP", "Destination IP", "MSG", "SID"];
+      if (response.ok) {
+        alert('데이터가 성공적으로 저장되었습니다.');
+      } else {
+        alert('데이터 저장 중 오류가 발생했습니다.');
+      }
+    });
+
+}
