@@ -60,14 +60,13 @@ async function saveRuleSet() {
 // 룰셋 출력
 async function fetchRuleSets() {
   try {
-      const response = await fetch('http://localhost:3500/save');
+      const response = await fetch('http://localhost:3500/get');
       const ruleSets = await response.json();
 
       // 처리된 룰셋 정보를 웹 페이지에 출력하는 로직을 작성
       const ruleSetListElement = document.getElementById('form');
       ruleSets.forEach(ruleSet => { 
           const ruleSetItem = document.createElement('div');
-          console.log(ruleSetItem);
           ruleSetItem.textContent = JSON.stringify(ruleSet);
           ruleSetListElement.appendChild(ruleSetItem);
       });
