@@ -1,5 +1,7 @@
 var xhr = new XMLHttpRequest();
 var filePath = '../tcpdump_test3.txt';
+var currentPage = 1;
+var countRow = 20;
 xhr.open('GET', filePath, true);
 
 xhr.onreadystatechange = function () {
