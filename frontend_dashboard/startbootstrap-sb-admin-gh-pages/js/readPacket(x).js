@@ -37,7 +37,7 @@ xhr.onreadystatechange = function () {
                 const length = lengthMatch ? lengthMatch[1] : null;
 
                 // 추출된 정보를 배열에 저장
-                const infoArray = [timestamp, sourceIp, sourcePort, destinationIp, destinationPort,  protocolType, `length ${length}`];
+                const infoArray = [timestamp, sourceIp, sourcePort, destinationIp, destinationPort,  protocolType, `${length}`];
                 resultArray.push(infoArray);
             }
         }
