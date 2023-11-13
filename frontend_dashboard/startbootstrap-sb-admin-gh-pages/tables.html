@@ -129,22 +129,24 @@
                 <table id="datatablesSimple">
                   <thead> 
                     <tr>
-                      <th>Action</th>
-                      <th>Protocol</th>
-                      <th>Source IP</th>
-                      <th>Destination IP</th>
-                      <th>MSG</th>
-                      <th>SID</th>
+                      <th>protocol</th>
+                      <th>src_ip</th>
+                      <th>src_port</th>
+                      <th>dst_ip</th>
+                      <th>dst_port</th>
+                      <th>option</th>
+                      <th>flag</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Action</th>
-                      <th>Protocol</th>
-                      <th>Source IP</th>
-                      <th>Destination IP</th>
-                      <th>MSG</th>
-                      <th>SID</th>
+                      <th>protocol</th>
+                      <th>src_ip</th>
+                      <th>src_port</th>
+                      <th>dst_ip</th>
+                      <th>dst_port</th>
+                      <th>option</th>
+                      <th>flag</th>
                     </tr>
                   </tfoot>
                   <tbody>
@@ -155,15 +157,17 @@
                       <td></td>
                       <td></td>
                       <td></td>
+                      <td></td>
                   </tbody>
                 </table>
                 <form id="form">
-                  <input type="text" id="Action">
-                  <input type="text" id="Protocol">
-                  <input type="text" id="Source">
-                  <input type="text" id="Destination">
-                  <input type="text" id="msg">
-                  <input type="text" id="sid">
+                  <input type="text" id="protocol">
+                  <input type="text" id="src_ip">
+                  <input type="text" id="src_port">
+                  <input type="text" id="dst_ip">
+                  <input type="text" id="dst_port">
+                  <input type="text" id="option">
+                  <input type="text" id="flag">
                   <button type="submit" id="btn">Add RuleSet</button> 
                 </form>
               </div>

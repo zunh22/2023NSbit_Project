@@ -51,7 +51,7 @@ xhr.onreadystatechange = function () {
                 var cell = row.insertCell(j);
                 cell.textContent = resultArray[i][j];
             }
-        }
+        } 
     }
 };
 

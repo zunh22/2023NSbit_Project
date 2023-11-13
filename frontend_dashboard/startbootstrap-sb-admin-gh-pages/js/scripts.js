@@ -26,13 +26,14 @@ form.addEventListener("submit", function(e) {
 
 function addArr(){
     alert("Rulset 입력 완료");
-    var action = document.getElementById("Action").value;
-    var Protocol = document.getElementById("Protocol").value;
-    var Source = document.getElementById("Source").value;
-    var Destination = document.getElementById("Destination").value;
-    var msg = document.getElementById("msg").value;
-    var sid = document.getElementById("sid").value;
-    Arr.push([action, Protocol, Source, Destination, msg, sid]);
+    var protocol = document.getElementById("protocol").value;
+    var src_ip = document.getElementById("src_ip").value;
+    var src_port = document.getElementById("src_port").value;
+    var dst_ip = document.getElementById("dst_ip").value;
+    var dst_port = document.getElementById("dst_port").value;
+    var option = document.getElementById("option").value;
+    var flag = document.getElementById("flag").value;
+    Arr.push([protocol, src_ip, src_port, dst_ip, dst_port, option, flag]);
 
     updateTable();
 }
