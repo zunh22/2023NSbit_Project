@@ -25,7 +25,7 @@ syn_count=0
 ack_count=0
 fin_count=0
 rst_count=0
-reset_interval=5
+reset_interval=2
 last_reset_time=$SECONDS
 
 function reset_packet_count() {
@@ -92,7 +92,6 @@ while IFS= read -r line; do
                 r_flag=$(echo "$rule" | awk -F' ' '{print $7}')
                 r_second_int=$((r_second))
                 r_count_int=$((r_count))
-
 
                 
                 if [ "$r_protocol" != "TCP" ]; then
@@ -184,6 +183,15 @@ while IFS= read -r line; do
 
                 fi
 
+                if [ "$r_option" != "msg" ]; then
+                    # 일정 시간이 경과하면 즉시 초기화
+                    time_difference=$((SECONDS - last_reset_time))
+                    echo "di : $time_difference"
+
+                    if [ "$time_difference" -ge "$r_second_int" ]; then
+                        reset_packet_count
+                    fi
+                fi
                 
 
             done < <(mysql -u $db_user -p"$db_pw" -D $db_name -se "$query")
