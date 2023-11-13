@@ -1,5 +1,6 @@
 #!/bin/bash
 container_name="$1"
+WS_SERVER="localhost:8080"
 
 date
 
@@ -146,7 +147,8 @@ while IFS= read -r line; do
 
                     if [ "$syn_count" -ge "$r_count_int" ]; then
                         echo "alert!! SYN count is $syn_count"
-                        echo "SYN Flooding:$line \ $line2" | nc -u localhost 3500
+                        MESSAGE="SYN Flooding:$line \ $line2"
+                        echo "$MESSAGE" | websocat "$WS_SERVER" 
                     fi
 
                 fi
