@@ -3,6 +3,8 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Area Chart Example
+
+const graphData = [42, 0, 0, 0, 0, 0];
 var ctx = document.getElementById("myAreaChart1");
 var myLineChart = new Chart(ctx, {
   type: 'line',
@@ -20,7 +22,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [42, 0, 0, 0, 0, 0],
+      data: graphData,
     }],
   },
   options: {
