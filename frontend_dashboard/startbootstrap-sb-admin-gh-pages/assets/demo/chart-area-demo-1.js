@@ -66,8 +66,10 @@ function processData(data){
       }
     }
   });
-  if(array.length==10){
-    array = [];
+  if(array.length==11){
+    for(var i = 0; i<10; i++){
+      array.pop();
+    }
   }
   saveArrayToLocalStorage('myArray', array);
 
