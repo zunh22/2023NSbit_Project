@@ -70,7 +70,7 @@ async function fetchRuleSets() {
       const response = await fetch('http://localhost:3500/get');
       const ruleSets = await response.json();
   
-      const ruleSetListElement = document.getElementById('ruleSetList');
+      const ruleSetListElement = document.querySelector('#datatablesSimple tbody');
 
       ruleSets.forEach(ruleSet => {
         const row = document.createElement('tr');
