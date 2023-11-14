@@ -155,7 +155,7 @@ while IFS= read -r line; do
 
                 fi
 
-                if [ "$r_option" != "NULL" ]; then
+                if [ "$r_option" != "" ]; then
                     # 일정 시간이 경과하면 즉시 초기화
                     time_difference=$((SECONDS - last_reset_time))
 
