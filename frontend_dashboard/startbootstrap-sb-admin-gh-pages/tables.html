@@ -26,56 +26,56 @@
       <a class="navbar-brand ps-3" href="index.html">NSbit</a>
       <!-- Sidebar Toggle-->
       <button
-      class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
-      id="sidebarToggle"
-      href="#!"
+        class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0"
+        id="sidebarToggle"
+        href="#!"
       >
-      <i class="fas fa-bars"></i>
-    </button>
-    <!-- Navbar Time-->
-    <form
-    class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
-    >
-    <div class="input-group">
-      <a id="clock" style="color: white">clock</a>
-      <script type="text/Javascript">
-        var Target = document.getElementById("clock");
-        
-        function clock(){
-          var time = new Date();
-          var month = time.getMonth();
-          var date = time.getDate();
-          var day = time.getDay();
-          var week = ['일', '월', '화', '수', '목', '금', '토'];
-          var hours = time.getHours();
-          var minutes = time.getMinutes();
-          var seconds = time.getSeconds();
-          
-          Target.innerText =
-          `${month + 1}월 ${date}일 ${week[day]}요일 ` +
-          `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
-        }
-        clock();
-        setInterval(clock, 1000);
-        </script>
+        <i class="fas fa-bars"></i>
+      </button>
+      <!-- Navbar Time-->
+      <form
+        class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0"
+      >
+        <div class="input-group">
+          <a id="clock" style="color: white">clock</a>
+          <script type="text/Javascript">
+            var Target = document.getElementById("clock");
+
+            function clock(){
+              var time = new Date();
+              var month = time.getMonth();
+              var date = time.getDate();
+              var day = time.getDay();
+              var week = ['일', '월', '화', '수', '목', '금', '토'];
+              var hours = time.getHours();
+              var minutes = time.getMinutes();
+              var seconds = time.getSeconds();
+
+              Target.innerText =
+              `${month + 1}월 ${date}일 ${week[day]}요일 ` +
+              `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+            }
+            clock();
+            setInterval(clock, 1000);
+          </script>
         </div>
       </form>
       <!-- Navbar-->
       <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
         <li class="nav-item dropdown">
           <a
-          class="nav-link dropdown-toggle"
-          id="navbarDropdown"
-          href="#"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-          ><i class="fas fa-user fa-fw"></i
-            ></a>
-            <ul
+            class="nav-link dropdown-toggle"
+            id="navbarDropdown"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            ><i class="fas fa-user fa-fw"></i
+          ></a>
+          <ul
             class="dropdown-menu dropdown-menu-end"
             aria-labelledby="navbarDropdown"
-            >
+          >
             <li><a class="dropdown-item" href="#!">Logout</a></li>
           </ul>
         </li>
@@ -85,28 +85,28 @@
       <div id="layoutSidenav_nav">
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
           <div class="sb-sidenav-menu">
-              <div class="nav">
-                  <div class="sb-sidenav-menu-heading">container1</div>
-                  <a class="nav-link" href="container1.html">
-                      <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                      container1
-                  </a>
-                  <div class="sb-sidenav-menu-heading">container2</div>
-                  <a class="nav-link" href="container2.html">
-                      <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                      container2
-                  </a>
-                  <div class="sb-sidenav-menu-heading">container3</div>
-                  <a class="nav-link" href="container3.html">
-                      <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                      container3
-                  </a>
-                  <div class="sb-sidenav-menu-heading">Addons</div>
-                  <a class="nav-link" href="tables.html">
-                      <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                      RuleSet
-                  </a>
-              </div>
+            <div class="nav">
+              <div class="sb-sidenav-menu-heading">container1</div>
+              <a class="nav-link" href="container1.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                container1
+              </a>
+              <div class="sb-sidenav-menu-heading">container2</div>
+              <a class="nav-link" href="container2.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                container2
+              </a>
+              <div class="sb-sidenav-menu-heading">container3</div>
+              <a class="nav-link" href="container3.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                container3
+              </a>
+              <div class="sb-sidenav-menu-heading">Addons</div>
+              <a class="nav-link" href="tables.html">
+                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                RuleSet
+              </a>
+            </div>
           </div>
           <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>
@@ -118,8 +118,7 @@
         <main>
           <div class="container-fluid px-4">
             <h1 class="mt-4">Rule Set</h1>
-            <div class="card mb-4">
-            </div>
+            <div class="card mb-4"></div>
             <div class="card mb-4">
               <div class="card-header">
                 <i class="fas fa-table me-1"></i>
@@ -127,7 +126,7 @@
               </div>
               <div class="card-body">
                 <table id="datatablesSimple">
-                  <thead> 
+                  <thead>
                     <tr>
                       <th>protocol</th>
                       <th>src_ip</th>
@@ -158,17 +157,18 @@
                       <td></td>
                       <td></td>
                       <td></td>
+                    </tr>
                   </tbody>
                 </table>
                 <form id="ruleSetForm">
-                  <input type="text" id="protocol">
-                  <input type="text" id="src_ip">
-                  <input type="text" id="src_port">
-                  <input type="text" id="dst_ip">
-                  <input type="text" id="dst_port">
-                  <input type="text" id="option">
-                  <input type="text" id="flag">
-                  <button type="submit" id="btn">Add RuleSet</button> 
+                  <input type="text" id="protocol" />
+                  <input type="text" id="src_ip" />
+                  <input type="text" id="src_port" />
+                  <input type="text" id="dst_ip" />
+                  <input type="text" id="dst_port" />
+                  <input type="text" id="option" />
+                  <input type="text" id="flag" />
+                  <button type="submit" id="btn">Add RuleSet</button>
                 </form>
               </div>
             </div>
@@ -177,26 +177,27 @@
         <footer class="py-4 bg-light mt-auto">
           <div class="container-fluid px-4">
             <div
-            class="d-flex align-items-center justify-content-between small"
+              class="d-flex align-items-center justify-content-between small"
             >
-            <div class="text-muted">Copyright &copy; Your Website 2023</div>
-            <div>
-              <a href="index.html">Back to Dashboard</a>
+              <div class="text-muted">Copyright &copy; Your Website 2023</div>
+              <div>
+                <a href="index.html">Back to Dashboard</a>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
-  </div> 
-  <script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-  crossorigin="anonymous"
-  ></script>
-  <script src="js/scripts.js"></script>
-  <script
-  src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
-  crossorigin="anonymous"
-  ></script>
-  <script src="js/datatables-simple-demo.js"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/scripts.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/datatables-simple-demo.js"></script>
+    <script src="js/alert.js"></script>
+  </body>
 </html>

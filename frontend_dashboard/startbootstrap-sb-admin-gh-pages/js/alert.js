@@ -1,7 +1,12 @@
-// 프론트엔드 (브라우저)
+// display.js
 const socket = new WebSocket('ws://localhost:8080');
 
 socket.addEventListener('message', (event) => {
-    // 서버에서 받은 메시지 콘솔에 출력 
-    console.log(`Received from server: ${event.data}`);
+    const receivedData = JSON.parse(event.data);
+    const displayContainer = document.getElementById('display-container');
+
+    // 받은 내용을 표시할 요소에 추가
+    const displayElement = document.createElement('div');
+    displayElement.textContent = `Received from server: ${JSON.stringify(receivedData)}`;
+    displayContainer.appendChild(displayElement);
 });
