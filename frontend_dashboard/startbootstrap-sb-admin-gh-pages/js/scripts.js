@@ -70,13 +70,18 @@ async function fetchRuleSets() {
       const response = await fetch('http://localhost:3500/get');
       const ruleSets = await response.json();
   
-      const ruleSetListElement = document.getElementById('ruleSetList');
-      ruleSets.forEach(ruleSet => { 
-        const ruleSetItem = document.createElement('div');
-        // HTML 형식으로 룰셋을 출력
-        ruleSetItem.innerHTML = `<p>${JSON.stringify(ruleSet)}</p>`;
-        ruleSetListElement.appendChild(ruleSetItem);
-      });
+      ruleSets.forEach(ruleSet => {
+        const row = document.createElement('tr');
+        // 룰셋의 속성에 따라서 <td>에 정보 입력
+        const properties = ['protocol', 'src_ip', 'src_port', 'dst_ip', 'dst_port', 'option', 'flag'];
+        properties.forEach(property => {
+            const cell = document.createElement('td');
+            cell.textContent = ruleSet[property];
+            row.appendChild(cell);
+        });
+
+        ruleSetListElement.appendChild(row);
+    });
     } catch (error) {
       console.error('Error fetching rule sets:', error);
       // 사용자에게 에러 메시지 표시
