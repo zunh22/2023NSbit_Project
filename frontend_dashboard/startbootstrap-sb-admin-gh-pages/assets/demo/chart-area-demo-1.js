@@ -53,7 +53,7 @@ function processData(data){
         yAxes: [{
           ticks: {
             min: 0,
-            max: 500,
+            max: 15000,
             maxTicksLimit: 5
           },
           gridLines: {
