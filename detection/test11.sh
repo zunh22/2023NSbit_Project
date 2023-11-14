@@ -154,7 +154,6 @@ while IFS= read -r line; do
                 if [ "$r_option" != "NULL" ]; then
                     # 일정 시간이 경과하면 즉시 초기화
                     time_difference=$((SECONDS - last_reset_time))
-                    echo "di : $time_difference"
 
                     if [ "$time_difference" -ge "$r_second_int" ]; then
                         reset_packet_count
