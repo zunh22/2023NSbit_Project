@@ -70,6 +70,8 @@ async function fetchRuleSets() {
       const response = await fetch('http://localhost:3500/get');
       const ruleSets = await response.json();
   
+      const ruleSetListElement = document.getElementById('ruleSetList');
+
       ruleSets.forEach(ruleSet => {
         const row = document.createElement('tr');
         // 룰셋의 속성에 따라서 <td>에 정보 입력
