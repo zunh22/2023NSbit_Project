@@ -26,7 +26,6 @@ syn_count=0
 last_reset_time=$SECONDS
 
 function reset_packet_count() {
-    echo "Resetting packet count"
     syn_count=0
     last_reset_time=$SECONDS
 }
@@ -68,14 +67,12 @@ while IFS= read -r line; do
 
                     if [ "$arp_detected" = true ]; then
                         if [ "$mac" != "$packet_mac" ]; then
-                            echo "arp spoofing!!"
+                            echo "arp spoofing! ip is $ip"
                             MESSAGE="$container_name:arp spoofing:$line"
                             echo "$MESSAGE" | websocat ws://localhost:8080
                         fi
 
                     fi
-
-
 
                 done < <(mysql -u $db_user -p"$db_pw" -D $db_name -se "$query")
             fi
@@ -142,13 +139,12 @@ while IFS= read -r line; do
                     ((syn_count+=1))
                     if [ "$syn_count" -le 1 ]; then
                         last_reset_time=$SECONDS
-                        echo "set"
+                    
                     fi
-                    echo "time : $last_reset_time"
-                    echo "$syn_count 333333"
+
 
                     if [ "$syn_count" -ge "$r_count_int" ]; then
-                        echo "alert!! SYN count is $syn_count"
+                        echo "SYN Flooding! SYN count is $syn_count"
                         MESSAGE="$container_name:SYN Flooding:$line \ $line2"
                         echo "$MESSAGE" | websocat ws://localhost:8080
                     fi
@@ -172,5 +168,3 @@ while IFS= read -r line; do
 	
 	fi
 done < /home/say/2023NSbit_Project/frontend_dashboard/startbootstrap-sb-admin-gh-pages/tcpdump_$container_name.txt
-
-
