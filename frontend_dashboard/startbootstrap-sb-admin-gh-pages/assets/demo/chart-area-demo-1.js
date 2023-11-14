@@ -39,7 +39,7 @@ loadData((result)=>{
             display: false
           },
           ticks: {
-            maxTicksLimit: 7
+            maxTicksLimit: 6
           }
         }],
         yAxes: [{
@@ -58,5 +58,8 @@ loadData((result)=>{
       }
     }
   });
+  if(array.length==6){
+    array = [];
+  }
 
 })
