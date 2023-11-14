@@ -58,7 +58,7 @@ loadData((result)=>{
       }
     }
   });
-  if(array.length==6){
+  if(array.length==10){
     array = [];
   }
 
