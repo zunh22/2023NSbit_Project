@@ -1,8 +1,9 @@
 #!/bin/bash
 
+echo "Enter container names separated by space:"
+read -a container_names
+
 while true; do
-    container_names=($(docker ps --format "{{.Names}}"))
-    #container_names="attack_phpmyadmin_1"
     for container_name in "${container_names[@]}"; do
         ./test11.sh "$container_name" &
     done
