@@ -14,8 +14,8 @@ import {loadData, dataToExport} from '../../js/readPacket_1.js';
 
 function processData(data){
   const myData = dataToExport;
-  const array = getArrayFromLocalStorage('myArray') || [];
-  array.push(myData);
+  const array = getArrayFromLocalStorage('myArray1') || [];
+  array .push(myData);
   
   var ctx = document.getElementById("myAreaChart1");
   var myLineChart = new Chart(ctx, {
@@ -66,12 +66,12 @@ function processData(data){
       }
     }
   });
-  if(array.length==11){
+  if(array.length==10){
     for(var i = 0; i<10; i++){
       array.pop();
     }
   }
-  saveArrayToLocalStorage('myArray', array);
+  saveArrayToLocalStorage('myArray1', array);
 
 }
 
