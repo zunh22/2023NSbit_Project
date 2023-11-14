@@ -70,7 +70,7 @@ async function fetchRuleSets() {
       const response = await fetch('http://localhost:3500/get');
       const ruleSets = await response.json();
   
-      const ruleSetListElement = document.getElementById('form');
+      const ruleSetListElement = document.getElementById('ruleSetList');
       ruleSets.forEach(ruleSet => { 
         const ruleSetItem = document.createElement('div');
         // HTML 형식으로 룰셋을 출력
@@ -86,3 +86,4 @@ async function fetchRuleSets() {
     }
   }
   
+  document.addEventListener('DOMContentLoaded', fetchRuleSets);
