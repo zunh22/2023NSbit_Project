@@ -28,18 +28,20 @@ const Rule = {
       if (callback) callback(null, results);
     });
   },
-  findAll: (callback) => {
-        const query = 'SELECT * FROM rule';
-        conn.query(query, (error, results) => {
-            if (error) {
-                console.error('룰 조회 오류:', error);
-                
-                return;
-            }
-            console.log('조회된 룰:', results);
-           
-        });
-    }
+  findAll: () => {
+    return new Promise((resolve, reject) => {
+      const query = 'SELECT * FROM rule';
+      conn.query(query, (error, results) => {
+        if (error) {
+          console.error('룰 조회 오류:', error);
+          reject(error);
+          return;
+        }
+        console.log('조회된 룰:', results);
+        resolve(results);
+      });
+    });
+  }
 };
 
 conn.connect((err) => {
