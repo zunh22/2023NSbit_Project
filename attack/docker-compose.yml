@@ -2,9 +2,9 @@ version: '3'
 services:
   container1:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork 
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     container_name: test1
     stdin_open: true
     tty: true
@@ -12,173 +12,174 @@ services:
  
   container2:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container3:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container4:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.12 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container5:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container6:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080 --fast"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080 --fast"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container7:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container8:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container9:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
-    stdin_open: true
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     tty: true
     entrypoint: /bin/bash
 
   container10:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container11:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container12:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container13:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container14:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container15:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container16:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container17:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container18:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container19:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.17.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
 
   container20:
     image: custom-ubuntu-hping3
-    command: -c "hping3 -S 172.20.0.2 -p 8080"
-    #networks:
-    # - mynetwork
+    command: -c "hping3 -S 172.19.0.3 -p 8080"
+    networks:
+     - nsbit
     stdin_open: true
     tty: true
     entrypoint: /bin/bash
-
-
+    
+networks:
+  nsbit:
+    external: true
