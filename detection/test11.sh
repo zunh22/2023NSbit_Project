@@ -147,7 +147,7 @@ while IFS= read -r line; do
 
                     if [ "$syn_count" -ge "$r_count_int" ]; then
                         echo "alert!! SYN count is $syn_count"
-                        MESSAGE="SYN Flooding:$line \ $line2"
+                        MESSAGE="$container_name:SYN Flooding:$line \ $line2"
                         echo "$MESSAGE" | websocat ws://localhost:8080
                     fi
 
