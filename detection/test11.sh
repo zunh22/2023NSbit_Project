@@ -69,6 +69,8 @@ while IFS= read -r line; do
                     if [ "$arp_detected" = true ]; then
                         if [ "$mac" != "$packet_mac" ]; then
                             echo "arp spoofing!!"
+                            MESSAGE="$container_name:arp spoofing:$line"
+                            echo "$MESSAGE" | websocat ws://localhost:8080
                         fi
 
                     fi
