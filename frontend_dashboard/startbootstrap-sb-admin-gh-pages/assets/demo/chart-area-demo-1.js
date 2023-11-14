@@ -2,13 +2,21 @@
 Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif';
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
-var array = [];
+function getArrayFromLocalStorage(key){
+  const data = localStorage.getItem(key);
+  return data ? JSON.parse(data) : [];
+}
+function saveArrayToLocalStorage(key, array){
+  localStorage.setItem(key, JSON.stringify(array));
+}
 
 import {loadData, dataToExport} from '../../js/readPacket_1.js';
 
-loadData((result)=>{
+function processData(data){
   const myData = dataToExport;
+  const array = getArrayFromLocalStorage('myArray') || [];
   array.push(myData);
+  
   var ctx = document.getElementById("myAreaChart1");
   var myLineChart = new Chart(ctx, {
     type: 'line',
@@ -61,5 +69,11 @@ loadData((result)=>{
   if(array.length==10){
     array = [];
   }
+  saveArrayToLocalStorage('myArray', array);
 
-})
+}
+
+loadData((result)=>{
+  const myData = dataToExport;
+  processData(myData);
+});
