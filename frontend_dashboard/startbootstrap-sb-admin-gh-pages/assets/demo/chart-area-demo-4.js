@@ -71,7 +71,7 @@ function processData(data){
       array.pop();
     }
   }
-  saveArrayToLocalStorage('myArray4s', array);
+  saveArrayToLocalStorage('myArray4', array);
 
 }
 
