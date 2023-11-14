@@ -5,7 +5,7 @@ export PATH=$PATH:/home/say/.cargo/bin/websocat
 date
 
 
-timeout 60 docker exec "$container_name" tcpdump -i eth0 -nn -e -vvv -tttt >> /home/say/2023NSbit_Project/frontend_dashboard/startbootstrap-sb-admin-gh-pages/tcpdump_$container_name.txt
+timeout 60 docker exec "$container_name" tcpdump -i eth0 -nn -e -vvv -tttt > /home/say/2023NSbit_Project/frontend_dashboard/startbootstrap-sb-admin-gh-pages/tcpdump_$container_name.txt
 
 db_user="root"
 db_pw="1234pkj"
