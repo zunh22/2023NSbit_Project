@@ -13,7 +13,7 @@ loadData((result)=>{
   var myLineChart = new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ["time1", "time2", "time3", "time4", "time5", "time6"],
+      labels: ["time1", "time2", "time3", "time4", "time5", "time6", "time7", "time8", "time9", "time10"],
       datasets: [{
         label: "Sessions",
         lineTension: 0.3,
@@ -39,7 +39,7 @@ loadData((result)=>{
             display: false
           },
           ticks: {
-            maxTicksLimit: 6
+            maxTicksLimit: 10
           }
         }],
         yAxes: [{
