@@ -67,7 +67,7 @@ function processData(data){
     }
   });
   if(array.length==11){
-    for(var i = 0; i<11; i++){
+    for(var i = 0; i<10; i++){
       array.pop();
     }
   }
